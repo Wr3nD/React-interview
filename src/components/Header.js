@@ -1,32 +1,14 @@
-import { useEffect, useState } from "react";
+import "../styles/Header.css"
 
-export default () => {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      return new Promise((res) => {
-        fetch("https://jsonplaceholder.typicode.com/users").then((foo) => {
-          foo.json().then((bar) => {
-            console.log("test");
-            setUsers(bar);
-            res();
-          });
-        });
-      });
-    })();
-  }, []);
-
+const Header = ({users}) => {
   if (users.length === 0) return <></>;
 
   return (
-    <div style={{ background: "grey", padding: 20, marginBottom: 5 }}>
+    <div className="highlight-container">
       Last employee is{" "}
-      <span
-        dangerouslySetInnerHTML={{
-          __html: `<strong>${users[users.length - 1].name}</strong>`
-        }}
-      ></span>
+      <strong>{users[users.length - 1]?.name}</strong>
     </div>
   );
 };
+
+export default Header;
