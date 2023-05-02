@@ -1,0 +1,15 @@
+.user-list-container {
+    background: yellow;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.text-decoration-heading {
+    text-Decoration: "underline"
+}
+
+.list-of-users {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}

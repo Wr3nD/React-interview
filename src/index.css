@@ -1,0 +1,7 @@
+.app {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/* I know that defining styles and creating each css file for each component is a bit overkill in this case.
+ But it should be the right approach when we would extend this application. */

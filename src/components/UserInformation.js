@@ -1,24 +1,26 @@
 import { useEffect } from "react";
+import "../styles/UserInformation.css"
 
 let renderCount = 1;
 
-const Component = ({ data }) => {
+const UserInformation = ({ age }) => {
+  
   useEffect(() => renderCount++);
-
-  if (!data.age) return null;
+  
+  if (!age) return <></>;
 
   return (
-    <div>
-      {data.age < 18 ? (
-        <span style={{ color: "red" }}>
+    <div className="user-information-container">
+      {age < 18?
+        <span className="span-highlight">
           You are too young to be our employee
         </span>
-      ) : (
-        <span style={{}}>You are old enough :)</span>
-      )}
-      <small> ({renderCount})</small>
+        : (
+          <span >You are old enough :)</span>
+        )}
+      <small> ({renderCount}) </small>
     </div>
   );
 };
 
-export default Component;
+export default UserInformation;
